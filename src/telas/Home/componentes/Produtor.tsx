@@ -21,16 +21,14 @@ export default function Produtor({
   distancia: number;
   estrelas: number;
 }) {
+  const [selecionado, inverterSelecionado] = useReducer((selecionado) => !selecionado,false);
+
   
-  // const [selecionado, setSelecionado] = useState(false);
-  const [selecionado, inverterSelecionado] = useReducer((selecionado) => !selecionado, false);
 
   return (
     <TouchableOpacity
       style={estilos.cartao as ViewStyle}
-      onPress={() => {
-        inverterSelecionado
-      }}>
+      onPress={inverterSelecionado}>
       <Image
         source={imagem as ImageSourcePropType}
         accessibilityLabel={nome}
