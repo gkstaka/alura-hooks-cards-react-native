@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import {
   Image,
   ImageSourcePropType,
@@ -21,12 +21,15 @@ export default function Produtor({
   distancia: number;
   estrelas: number;
 }) {
-  const [selecionado, setSelecionado] = useState(false);
+  
+  // const [selecionado, setSelecionado] = useState(false);
+  const [selecionado, inverterSelecionado] = useReducer((selecionado) => !selecionado, false);
+
   return (
     <TouchableOpacity
       style={estilos.cartao as ViewStyle}
       onPress={() => {
-        setSelecionado(!selecionado);
+        inverterSelecionado
       }}>
       <Image
         source={imagem as ImageSourcePropType}
@@ -40,7 +43,7 @@ export default function Produtor({
             quantidade={estrelas}
             editavel={selecionado}
             grande={selecionado}
-          />
+                  />
         </View>
         <Text style={estilos.distancia}>{distancia}</Text>
       </View>
