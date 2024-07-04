@@ -1,3 +1,6 @@
+# Alura aula de hooks
+Utilização de hooks para atualização dos valores de rating dos estabelecimentos
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
